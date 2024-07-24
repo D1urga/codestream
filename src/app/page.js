@@ -1,94 +1,57 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { Arsenal } from "next/font/google";
+import {
+  FaBriefcase,
+  FaBriefcaseMedical,
+  FaPen,
+  FaShareAlt,
+  FaTree,
+} from "react-icons/fa";
+const inter = Arsenal({ subsets: ["latin"], weight: "400" });
 
 export default function Home() {
+  const txt1 = ` Welcome to CodeStream, your ultimate destination for mastering the art
+          of coding. Whether you're a seasoned developer or just starting your
+          journey, we offer a wealth of resources to enhance your skills and
+          inspire your creativity.`;
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+      <div className={styles.div1}>
+        <h2
+          className={styles.intro1}
+          style={{ fontFamily: inter.style.fontFamily }}
+        >
+          Empowering Coders & Developers
+        </h2>
+        <h3 className={styles.intro2}>{txt1}</h3>
+        <button className={styles.btn}>Explore Now</button>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+      <div className={styles.div2}>
+        <div className={styles.outer_div}>
+          <img src="/img1.jpg" className={styles.img}></img>
+          <div className={styles.title}>
+            <FaShareAlt className={styles.icons} />
+            <p className={styles.p1}>Data Structures & Algorithms</p>
+          </div>
+          <div className={styles.track}></div>
+          <p className={styles.p2}>You are 0% there</p>
+          <p className={styles.p3}>
+            Learn and Practice problems on data structures and algorithms like
+            Linked Lists, Stacks, Queues,
           </p>
-        </a>
+        </div>
+        <div className={styles.outer_div}>
+          <div className={styles.title}>
+            <FaPen className={styles.icons} />
+            <p className={styles.p1}>Skill Tests</p>
+          </div>
+
+          <p className={styles.p3} style={{ marginTop: "10px" }}>
+            Test your programming skills. Get instant results and course
+            suggestions
+          </p>
+        </div>
       </div>
     </main>
   );
